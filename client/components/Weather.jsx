@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { receiveForecast, showError } from '../actions'
+import { receiveForecast } from '../actions/weather'
+import { showError } from '../actions/error'
 import { getForecast } from '../apis'
-
 
 class Weather extends React.Component {
 
@@ -21,8 +21,8 @@ class Weather extends React.Component {
         this.props.dispatch(receiveForecast(forecast))
         
       })
-      .catch(err => {
-        this.props.dispatch(showError(err.message))
+       .catch(err => {
+         this.props.dispatch(showError(err.message))
       })
   }
 
