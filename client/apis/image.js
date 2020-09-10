@@ -14,7 +14,7 @@ export function getNasaPhoto() {
   return request
     .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
     .then((response) => {
-      if (response.body.images.length !== 0) {
+      if (response.body.length !== 0) {
         return response.body
       } else {
         return placeholder
