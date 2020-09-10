@@ -1,17 +1,17 @@
 import React from 'react'
-import ShoppingList from './ShoppingList'
+// import ShoppingList from './ShoppingList'
 
-import Quote from './Quote'
+// import Quote from './Quote'
 
 const App = () => {
   return (
     <>
     
   
-    <ShoppingList />
+    {/* <ShoppingList /> */}
    
     <h1>Dashboard development has begun!</h1>
-    <Quote/>
+    {/* <Quote/> */}
     </>
   )
 }
