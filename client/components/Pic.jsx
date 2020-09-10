@@ -23,7 +23,10 @@ class Pic extends React.Component {
       <>
         <div className="image-container tile is-child notification is-info">
           <p className="title">Pic of the day</p>
-          <img src={nasaPic.url} className="img" alt={nasaPic.title} />
+          <figure>
+            <img src={nasaPic.url} className="img" alt={nasaPic.title} />
+            <figcaption>{nasaPic.title}</figcaption>
+          </figure>
         </div>
       </>
     )
