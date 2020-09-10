@@ -1,6 +1,7 @@
 import React from 'react'
 import ShoppingList from './ShoppingList'
 
+import Quote from './Quote'
 
 const App = () => {
   return (
@@ -8,9 +9,10 @@ const App = () => {
     
   
     <ShoppingList />
+   
+    <h1>Dashboard development has begun!</h1>
+    <Quote/>
     </>
-
-
   )
 }
 
