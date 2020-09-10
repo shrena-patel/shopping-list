@@ -1,27 +1,23 @@
 import React from 'react'
 
-const ShoppingList = () => {
-    return (
-        <>
-        <article className="tile is-child notification is-success">
-            <div className="content">
-                <p className="title">Shopping List</p>
+import ShoppingListForm from './ShoppingListForm'
+
+class ShoppingList extends React.Component {
+
+    render() {
+        return (
+            <>
+            <article className="tile is-child notification is-success">
                 <div className="content">
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
-                    <p>-</p>
+                    <h1 className="title">Shopping List</h1>
+                    <div className="content">
+                    <ShoppingListForm />
+                    </div>
                 </div>
-            </div>
-        </article>
-        </>
-    )
+            </article>
+            </>
+        )
+    }
 }
 
 export default ShoppingList

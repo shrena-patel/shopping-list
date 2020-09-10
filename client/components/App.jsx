@@ -1,5 +1,4 @@
 import React from 'react'
-import Quote from './Quote'
 
 import Nav from './Nav'
 import Weather from './Weather'
