@@ -16,7 +16,7 @@
     "server": "node server",
     "test": "jest --watchAll",
     "knex": "knex --knexfile server/db/knexfile.js",
-    "postinstall": "webpack && knex migrate:latest"
+    "postinstall": "knex migrate:latest"
 
   },
   "babel": {
