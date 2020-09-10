@@ -1,7 +1,7 @@
 import { ADD_ITEM } from '../actions/shopping'
 import { DEL_ITEM } from '../actions/shopping'
 
-const initialState = ['Bananas', 'Bread']
+const initialState = []
 
 const reducer = (state = initialState, action) => {
 
