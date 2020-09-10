@@ -16,11 +16,11 @@ class Stories extends React.Component {
       getPosts = () => {
         this.props.dispatch(requestPosts())
         fetchPosts(this.state.inputNewsSub)           
-          .then(subreddits => {                   //subreddits are the posts from the above subreddit
-            console.log(subreddits)
+          .then(news => {                   //subreddits are the posts from the above subreddit
+            console.log(news)
             //we dispatch/send the subreddits data in the .then block to the reducers(global state) and uses the receivePosts action on the data
             //subreddits.js is expecting the receivePosts(RECEIVE_POSTS) action (go to reducers/subreddits.js)
-            this.props.dispatch(receivePosts(subreddits))    
+            this.props.dispatch(receivePosts(news))    
           })
           .catch(err => {
             this.props.dispatch(showError(err.message))
@@ -29,13 +29,13 @@ class Stories extends React.Component {
   
       handleChange = (event) => {
         this.setState({
-          inputSubreddit: event.target.value
+          inputNewsSub: event.target.value
         });
       }
   
       handleSubmit = (event) => {
         event.preventDefault();
-        this.getPosts()
+        this.getStories()
       }
   
     render(){
