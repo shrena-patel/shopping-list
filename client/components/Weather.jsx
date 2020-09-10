@@ -28,7 +28,15 @@ class Weather extends React.Component {
 
   render(){
     return (
-      <h1 className='subtitle'>Today's Weather in {this.props.weather.name}</h1>
+      <article className="tile is-child notification is-warning">
+        <p className="title">Weather</p>
+        <h1 className='subtitle'>Today's Weather in {this.props.weather.name}</h1>
+        <p>-</p>
+        <p>-</p>
+        <p>-</p>
+        <p>-</p>
+        <p>-</p>
+      </article>
     )
   } 
 }

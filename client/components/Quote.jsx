@@ -22,8 +22,11 @@ class Quote extends React.Component {
         const quote = this.state.quote
         return (
         <>
+        <article className="tile is-child notification is-danger">
+            <p className="title">Daily Quote</p>
             {quote.en && <h3> { quote.en }
             </h3>}      
+        </article>
         </>
         )
     }
