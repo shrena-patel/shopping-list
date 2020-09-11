@@ -39,8 +39,8 @@ class ShoppingListForm extends React.Component {
         return (
             <>
                 <form className="shopping-form" onSubmit={this.handleSubmit}>
-                    <input type="text" name="item" value={this.state.item} onChange={this.handleChange} />
-                    <button type="Submit">Add item</button>
+                    <input className="mb-3" type="text" name="item" value={this.state.item} onChange={this.handleChange} />
+                    <button className="button is-small" type="Submit">Add item</button>
                 </form>
             </>
         )
