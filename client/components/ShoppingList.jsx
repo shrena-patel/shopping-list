@@ -26,7 +26,7 @@ class ShoppingList extends React.Component {
                             <ul>
                                 {this.props.shopping.map(item => {
                                     return (
-                                        <li key={item.id}>{item.name} <button type="button" onClick={() => {
+                                        <li key={item.id}>{item.name} <button className="button is-small" type="button" onClick={() => {
                                             apiDeleteItem(item.id)
                                                 .then(() => {
                                         
