@@ -4,7 +4,9 @@ const connection = require('knex')(config)
 
 module.exports = {
   getToDo,
-  getShoppingList
+  getShoppingList,
+  addItem,
+  deleteItem
 }
 
 function getToDo (db = connection) {
@@ -13,4 +15,15 @@ function getToDo (db = connection) {
 
 function getShoppingList (db = connection) {
     return db('shoppingList').select()
+}
+
+function addItem (item, db = connection) {
+  return db('shoppingList')
+  .insert(item)
+}
+
+function deleteItem (id, db = connection) {
+  return db('shoppingList')
+  .where('id', id)
+  .del()
 }
