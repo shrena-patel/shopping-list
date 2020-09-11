@@ -17,7 +17,6 @@ class Weather extends React.Component {
   getWeather = () => {
     getForecast()
       .then(forecast => {
-        // console.log(forecast)
         this.props.dispatch(receiveForecast(forecast))
         
       })
@@ -36,9 +35,6 @@ class Weather extends React.Component {
         <p className='mb-1'><span className="has-text-weight-bold">Current Temperature:</span> {this.props.weather?.main?.temp}&#8451;</p>
         <p className='mb-1'><span className="has-text-weight-bold">High:</span> {this.props.weather?.main?.temp_max}&#8451;</p>
         <p className='mb-1'><span className="has-text-weight-bold">Low:</span> {this.props.weather?.main?.temp_min}&#8451;</p>
-       
-        
-        {this.props.weather.weather && console.log(this.props.weather?.weather[0].description)}
       </article>
     )
   } 
