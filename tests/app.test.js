@@ -1,10 +1,13 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
 import App from '../client/components/App'
-
 test('<App />', () => {
-  const expected = 'React development has begun!'
-  const wrapper = mount(<App />)
-  expect(wrapper.text()).toMatch(expected)
+  const wrapper = shallow(<App />)
+  //console.log(wrapper.debug())
+  
+  const expected = 12
+  expect(wrapper.find('div')).toHaveLength(expected);
 })
+
+
