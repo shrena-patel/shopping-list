@@ -15,7 +15,10 @@
     "build": "webpack",
     "server": "node server",
     "test": "jest --watchAll",
-    "knex": "knex --knexfile server/db/knexfile.js"
+    "knex": "knex --knexfile server/db/knexfile.js",
+    "h:migrate": "heroku run npm run knex migrate:latest",
+    "h:rollback": "heroku run npm run knex migrate:rollback",
+    "h:seed": "heroku run npm run knex seed:run"
   },
   "babel": {
     "presets": [
