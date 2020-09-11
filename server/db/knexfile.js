@@ -20,6 +20,7 @@ module.exports = {
     },
     seeds: {
       directory: './server/db/seeds'
+      filename: './server/db/dev.sqlite3'
     }
   },
 

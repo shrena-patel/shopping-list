@@ -1,28 +1,22 @@
-# A starter webpack project for React
+# DashBoard
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
+Dashboard is your daily inspiration feed and planning environment.
 
-* Fork this repo
-* Rename your repo according to the app you're building
+# View the live site
 
-```sh
-git clone https://github.com/[your-account]/[your-app].git
-cd [your-app] && npm i
-```
+http://
 
-To start the development server with a watcher that rebuilds your code, run `npm run dev`. The assets built by webpack are placed in `server/public`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
+## To get started:
 
-Additional components should be placed in `client/components`.
+1. Clone the repo
 
-## Separate client/server
+2. Run npm install
 
-The boilerplate is also set up to host the client using `webpack-dev-server` with hot module reloading etc. To use this method, in one terminal run:
-```sh
-npm run client
-```
-and in the other:
-```sh
-npm run server
-```
-The client will be available on http://localhost:8080 and the server on http://localhost:3000. Note that you will still need to manage CORS between the two, as they are on different ports.
+# Authors
 
+[Cameron Shaw](https://github.com/camshaw11)
+[Alex Procter](https://github.com/alexpppp)
+[Seamus Ahkit](https://github.com/seamus-ahkit)
+[John Gray](https://github.com/meetjohngray)
+[Lex Stokes](https://github.com/lex-stokes)
+[Steven De Lacy](https://github.com/steven-delacy)

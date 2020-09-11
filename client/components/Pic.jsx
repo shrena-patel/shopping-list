@@ -1,20 +1,36 @@
-import React from 'react'
+import React from "react"
+import { getNasaPhoto } from "../apis/image"
+class Pic extends React.Component {
+  state = {
+    nasaPhotoInfo: {},
+  }
 
-const Pic = () => {
+  componentDidMount() {
+    this.refreshNasaPhoto()
+  }
+
+  refreshNasaPhoto() {
+    getNasaPhoto().then((nasaPhotoInfo) => {
+      this.setState({
+        nasaPhotoInfo: nasaPhotoInfo,
+      })
+    })
+  }
+
+  render() {
+    const nasaPic = this.state.nasaPhotoInfo
     return (
-        <>
-        <article className="tile is-child notification is-info">
-          <div className="content">
-              <p className="title">Pic of the day</p>
-              <div className="content">
-                  <p>-</p>
-                  <p>-</p>
-                  <p>-</p>
-              </div>
-          </div>
-        </article>
-        </>
+      <>
+        <div className="image-container tile is-child notification is-info">
+          <p className="title">Pic of the day</p>
+          <figure>
+            <img src={nasaPic.url} className="img" alt={nasaPic.title} />
+            <figcaption>{nasaPic.title}</figcaption>
+          </figure>
+        </div>
+      </>
     )
+  }
 }
 
 export default Pic
