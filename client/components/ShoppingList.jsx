@@ -4,7 +4,16 @@ import ShoppingListForm from './ShoppingListForm'
 import { connect } from 'react-redux'
 import { deleleItem } from '../actions/shopping'
 
+import { getAllItems, apiDeleteItem} from '../apis/shopping'
+import { initItem } from '../actions/shopping'
+
 class ShoppingList extends React.Component {
+
+    componentDidMount() {
+        //api request function
+        getAllItems()
+            .then(item => (this.props.dispatch(initItem(item))))
+    }
 
     render() {
         return (
@@ -17,8 +26,14 @@ class ShoppingList extends React.Component {
                             <ul>
                                 {this.props.shopping.map(item => {
                                     return (
-                                        <li key={item}>{item} <button type="button" onClick={() => {
-                                            this.props.dispatch(deleleItem(item))
+                                        <li key={item.id}>{item.name} <button type="button" onClick={() => {
+                                            apiDeleteItem(item.id)
+                                                .then(() => {
+                                        
+                                                    this.props.dispatch(deleleItem(item))
+
+                                                })
+                                            
                                         }}>Delete item</button></li>
                                     )
                                 })}
@@ -30,6 +45,7 @@ class ShoppingList extends React.Component {
         )
     }
 }
+
 
 function mapStateToProps(globalState) {
     return { shopping: globalState.shopping }

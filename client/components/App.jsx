@@ -1,10 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-import ShoppingList from './ShoppingList'
-||||||| 09e8c2b
-// import ShoppingList from './ShoppingList'
-=======
->>>>>>> 4d6141ff637f8fae20ca6cd0f7aa4ca5190d3da1
 
 import Nav from './Nav'
 import Weather from './Weather'
@@ -18,23 +12,6 @@ import Pic from './Pic'
 const App = () => {
   return (
     <>
-<<<<<<< HEAD
-    
-  
-    <ShoppingList />
-   
-   
-    {/* <Quote/> */}
-    </>
-||||||| 09e8c2b
-    
-  
-    {/* <ShoppingList /> */}
-   
-    <h1>Dashboard development has begun!</h1>
-    {/* <Quote/> */}
-    </>
-=======
       <Nav />
       <section className="section">
           <div className="container">
@@ -70,7 +47,6 @@ const App = () => {
           </div>
       </section>
       </>
->>>>>>> 4d6141ff637f8fae20ca6cd0f7aa4ca5190d3da1
   )
 }
 
