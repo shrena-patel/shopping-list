@@ -6,11 +6,9 @@ const placeholder = {
   url: "https://miro.medium.com/max/1600/1*zRvYJWeLF5dcxM1G2hcEHA.jpeg",
 }
 
-export function getNasaPhoto() {
+export function getNasaPhoto(date = "2020-09-09") {
   return request
-    .get(
-      `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=2020-09-09`
-    )
+    .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`)
     .then((response) => {
       if (response.body.url) {
         console.log(response.headers)
