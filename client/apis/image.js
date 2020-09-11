@@ -11,7 +11,6 @@ export function getNasaPhoto(date = "2020-09-09") {
     .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`)
     .then((response) => {
       if (response.body.url) {
-        console.log(response.headers)
         return response.body
       } else {
         return placeholder
