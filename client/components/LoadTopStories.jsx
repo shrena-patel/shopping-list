@@ -1,7 +1,7 @@
 import React from 'react'
-import request from 'superagent'
 import {connect} from 'react-redux'
-import { getStories } from '../apis/stories'
+import { fetchStories } from '../apis/stories'
+import {requestPosts, receivePosts, showError} from '../actions/stories'
 
 class Stories extends React.Component {
 
@@ -10,16 +10,14 @@ class Stories extends React.Component {
     }
 
     componentDidMount(){
-        
+        this.getPosts()
       }
     
       getPosts = () => {
         this.props.dispatch(requestPosts())
-        fetchPosts(this.state.inputNewsSub)           
-          .then(news => {                   //subreddits are the posts from the above subreddit
+        fetchStories(this.state.inputNewsSub)           
+          .then(news => {                   
             console.log(news)
-            //we dispatch/send the subreddits data in the .then block to the reducers(global state) and uses the receivePosts action on the data
-            //subreddits.js is expecting the receivePosts(RECEIVE_POSTS) action (go to reducers/subreddits.js)
             this.props.dispatch(receivePosts(news))    
           })
           .catch(err => {
@@ -35,7 +33,7 @@ class Stories extends React.Component {
   
       handleSubmit = (event) => {
         event.preventDefault();
-        this.getStories()
+        this.getPosts()
       }
   
     render(){
