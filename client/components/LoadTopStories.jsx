@@ -17,7 +17,6 @@ class Stories extends React.Component {
         this.props.dispatch(requestPosts())
         fetchStories(this.state.inputNewsSub)           
           .then(news => {                   
-            console.log(news)
             this.props.dispatch(receivePosts(news))    
           })
           .catch(err => {
