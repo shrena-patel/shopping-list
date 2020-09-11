@@ -1,3 +1,9 @@
 .webcam-wrapper {
   flex-wrap: wrap !important;
 }
+
+#input-date-for-picture {
+  background-color: #3298dc;
+  color: white;
+  width: 150px;
+}
