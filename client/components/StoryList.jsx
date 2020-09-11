@@ -8,11 +8,13 @@ import Post from './Post'
 // title then becomes the posts title property
 const Subreddit = ({subreddits}) => (
   <div>
-    {subreddits.map((post, i) =>
-      <Post
-        key={i}
-        title={post.title}
-      />
+    {subreddits.slice(0, 5).map((post, i) =>
+        <Post
+          key={i}
+          title={post.title}
+          author={post.author}
+          permalink={post.permalink}
+        />
     )}
   </div>
 )

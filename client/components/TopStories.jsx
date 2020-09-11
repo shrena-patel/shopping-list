@@ -8,8 +8,7 @@ const TopStories = () => {
         <>
         <article className="tile is-child">
             <p className="title">Top Stories</p>
-            <p className="subtitle">A 'no border' example</p>
-            <LoadTopStories />
+            <LoadTopStories /><br></br>
             <StoryList />
         </article>
         </>

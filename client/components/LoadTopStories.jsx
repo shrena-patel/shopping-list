@@ -1,64 +1,70 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import { fetchStories } from '../apis/stories'
-import {requestPosts, receivePosts, showError} from '../actions/stories'
+import React from "react";
+import { connect } from "react-redux";
+import { fetchStories } from "../apis/stories";
+import { requestPosts, receivePosts, showError } from "../actions/stories";
 
 class Stories extends React.Component {
+  state = {
+    inputNewsSub: "news",
+  };
 
-    state = {
-        inputNewsSub: "news"
-    }
+  componentDidMount() {
+    this.getPosts();
+  }
 
-    componentDidMount(){
-        this.getPosts()
-      }
-    
-      getPosts = () => {
-        this.props.dispatch(requestPosts())
-        fetchStories(this.state.inputNewsSub)           
-          .then(news => {                   
-            console.log(news)
-            this.props.dispatch(receivePosts(news))    
-          })
-          .catch(err => {
-            this.props.dispatch(showError(err.message))
-          })
-      }
-  
-      handleChange = (event) => {
-        this.setState({
-          inputNewsSub: event.target.value
-        });
-      }
-  
-      handleSubmit = (event) => {
-        event.preventDefault();
-        this.getPosts()
-      }
-  
-    render(){
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <input type="text" onChange={this.handleChange} value={this.state.inputNewsSub}></input>
-            </label>
-            <button onClick={this.handleSubmit}>Fetch Posts</button>
-          </form>  
-          {this.props.children}
-        </div>
-      )
-    }
+  getPosts = () => {
+    this.props.dispatch(requestPosts());
+    fetchStories(this.state.inputNewsSub)
+      .then((news) => {
+        this.props.dispatch(receivePosts(news));
+      })
+      .catch((err) => {
+        this.props.dispatch(showError(err.message));
+      });
+  };
 
+  handleChange = (event) => {
+    this.setState({
+      inputNewsSub: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.getPosts();
+  };
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="field has-addons">
+
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                onChange={this.handleChange}
+                value={this.state.inputNewsSub}
+              ></input>
+            </div>
+
+            <div className="control">
+              <button className="button is-info" onClick={this.handleSubmit}>
+                Fetch Posts
+              </button>
+            </div>
+            
+          </div>
+        </form>
+
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
-export default connect()(Stories)
-
-
-
-
-
-
+export default connect()(Stories);
 
 /*
 REDUX STEPS v2 :P
